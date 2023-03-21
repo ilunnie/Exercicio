@@ -1,5 +1,6 @@
 from Luis import *
 from Vini import *
+from LuizMod import *
 
 def recebe_int(texto, erro="Valor inválido!"):
     while True:
@@ -9,17 +10,28 @@ def recebe_int(texto, erro="Valor inválido!"):
             print(erro)
 
 while True:
-    operacao = input("Qual operação deseja fazer?\n> ").replace('*', 'x')
+    print('\n'*30)
+    num1 = recebe_int("\nDigite o primeiro número\n> ")
+    num2 = recebe_int("\nDigite o segundo número\n> ")
 
-    num1 = recebe_int("Digite o primeiro número\n> ")
-    num2 = recebe_int("Digite o segundo número\n> ")
+    operacao = input("\nQual operação deseja fazer?\n> ").replace('*', 'x')
 
     match operacao:
         case "+":
             print(f"Resultado: {soma(num1, num2)}")
+            break
         case "-":
             print(f"Resultado: {subtracao(num1, num2)}")
+            break
         case "x":
             print(f"Resultado: {x(num1, num2)}")
+            break
         case "/":
             print(f"Resultado: {div(num1, num2)}")
+            break
+        case "fs":
+            print(f'Resultado: {fatorialsoma(num1, num2)}')
+            break
+        case other:
+            print('\nEssa operação não existe.')
+            break
