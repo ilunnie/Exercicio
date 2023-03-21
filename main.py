@@ -4,15 +4,15 @@ from Vini import *
 def recebe_int(texto, erro="Valor inválido!"):
     while True:
         try:
-            return int(input(texto))
+            return float(input(texto))
         except:
             print(erro)
 
 while True:
-    operacao = input("Qual operação deseja fazer").replace('*', 'x')
+    operacao = input("Qual operação deseja fazer?\n> ").replace('*', 'x')
 
-    num1 = recebe_int("Digite o primeiro número")
-    num2 = recebe_int("Digite o segundo número")
+    num1 = recebe_int("Digite o primeiro número\n> ")
+    num2 = recebe_int("Digite o segundo número\n> ")
 
     match operacao:
         case "+":
